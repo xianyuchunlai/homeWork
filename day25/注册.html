@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <style type="text/css">
+
+        body {
+
+            background: skyblue url("img/oo.gif");
+            margin: 0;
+            no-repeat: right bottom fixed;
+        }
+
+        div span {
+            visibility: hidden;
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<div style="background: red">
+    <img src="img/登录.png">
+</div>
+<div style="height: 700px;width: 500px; position: relative ;left: 500px;top: 200px">
+    <form action="" method="post">
+        <div style="font-size: x-large ;position: relative;left: 140px ;top: 20px">邮箱号注册</div>
+
+        <br>
+        <br>
+        <br>
+        <label for="username">邮箱地址:</label>
+        <input style="width: 500px ;height: 50px" type="text" id="username" onblur="showOnblur(this)"
+
+               onfocus="inputFocus(this)"
+        >
+        <span id="sb">请输入邮箱账号，谢谢</span>
+        <br>
+        <br>
+        <br>
+        <label for="password">登录密码:</label>
+        <input style="height: 50px;width: 500px" type="password" id="password">
+        <br><br>
+        <div style="position: relative;left: 150px;top: 150px">
+            <input id ="sb2"  style="height: 50px ;width: 250px " type="button" value="下一步" onclick="Colo(this)">
+        </div>
+
+
+    </form>
+</div>
+
+<br>
+
+</body>
+<script type="text/javascript">
+    function inputFocus(ele) {
+        var sb = document.getElementById("sb");
+
+        sb.style.visibility = "visible"
+
+    }
+
+    function showOnblur(ele) {
+        var sb = document.getElementById("sb");
+        sb.style.visibility = "hidden"
+
+    }
+
+    function Colo(sb2) {
+        var sb2 = document.getElementById("sb2")
+        sb2.style.color="red";
+
+    }
+</script>
+
+
+</html>
