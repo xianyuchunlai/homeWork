@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<table></table>
+</body>
+<script type="text/javascript">
+    $('button').click(function () {
+        $.get("http://localhost:8080/GetData",function (data,status) {
+            if(status == "success"){
+                var jsonData = $.parseJSON(data);
+
+                if(jsonData !=null){
+
+                    $('table').append($('<tr>').append(
+                        $('<th>').text("用户id")
+                        ).append(
+                        $('<th>').text("用户名")
+                        ).append(
+                        $('<th>').text("密码")
+                        )
+                    )
+
+                    $.each(jsonData,function (index,data) {
+
+                        $('table').append($('<tr>').append(
+                            $('<td>').text(data['uid'])
+                            ).append(
+                            $('<td>').text(data['uname'])
+                            ).append(
+                            $('<td>').text(data['password'])
+                            )
+                        )
+                    })
+
+
+
+
+
+
+                }
+
+
+
+            }
+
+
+
+        })
+    })
+
