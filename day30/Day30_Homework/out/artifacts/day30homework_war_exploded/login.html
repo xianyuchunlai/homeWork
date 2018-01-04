@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            background-color: honeydew;
+        }
+        #time1{
+            width: 100px;
+            height: 100px;
+
+            margin-left: 1600px;
+
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="time1"
+>
+
+</div>
+<script>
+    setInterval(
+        "document.getElementById('time1').innerHTML = new Date().toLocaleString();", 1000);
+
+</script>
+
+
+<div style="background-color: white">
+    <img style="width:1500px;
+    height:100px"
+         src="img\登录.png">
+</div>
+<div style="position: relative;
+left: 100px;
+top: 200px">
+    <img style="width: 1200px;
+    height: 800px"
+         src="img\1登录图2.png">
+</div>
+
+<div style="background:white;
+height: 800px;width: 700px;
+position: relative;
+left:1300px;
+top: -550px ; ">
+    <div style="font-size: x-large;
+     position: relative;
+     left: 170px;
+     top: 80px">
+        网易云登录
+    </div>
+
+    <form action="/login" method="post">
+    <br>
+    <div style="position: relative;
+    left: 55px;
+    top: 150px">
+        用户名：
+        <input  id ="sb3" style="width: 300px;
+        height: 40px" type="text" name="username"  onblur= "showOnfocus()" onfocus="showOnblur()"
+        >
+    </div>
+    <br>
+    <div style="position: relative;
+    left: 70px;
+    top: 200px">
+        密码：
+        <input style="height: 40px;
+        width: 300px" type="password" name="password">
+    </div>
+    <div style="position: relative;
+    left: 155px;top: 300px">
+        <input style="width: 250px;
+        height: 40px" type="submit" value="登录">
+    </div>
+    </form>
+</div>
+<h1><a href="../src/com/lanou3g/web/register.html">去注册</a></h1>
+
+</body>
+
+<script type="text/javascript">
+    function showOnfocus() {
+        var sb = document.getElementById("sb3");
+        sb.style.fontSize = "25px";
+        sb.style.border = "2px solid red";
+
+
+    }
+    function showOnblur() {
+        var sb= document.getElementById("sb3");
+        sb.style.fontSize="18px";
+        sb.style.border ="null";
+    }
+
+</script>
+</html>
