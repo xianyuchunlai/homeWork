@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+    <package name="work" extends="struts-default">
+
+        <interceptors>
+            <interceptor name="login" class="com.lanou3g.iterceptor.LoginInterceptor">
+                <param name="excludeMethods">login</param>
+            </interceptor>
+            <interceptor-stack name="gogo">
+                <interceptor-ref name="login"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+
+        <global-results>
+            <result name="login">login.jsp</result>
+        </global-results>
+
+        <action name="inf" class="com.lanou3g.action.EmployeeAction">
+            <result name="success">index.jsp</result>
+            <interceptor-ref name="gogo"></interceptor-ref>
+        </action>
+
+        <action name="login" class="com.lanou3g.action.LoginAction">
+            <result name="success">index.jsp</result>
+            <interceptor-ref name="gogo"/>
+        </action>
+
+        <action name="gogogo" class="com.lanou3g.action.EmpAction" method="up">
+            <result name="success" type="chain">inf</result>
+            <interceptor-ref name="gogo"/>
+        </action>
+
+
+    </package>
+</struts>
